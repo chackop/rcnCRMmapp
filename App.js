@@ -46,6 +46,7 @@ const App: () => React$Node = () => {
                 screen and then come back to see your edits.
               </Text>
             </View>
+          </View>
         </ScrollView>
       </SafeAreaView>
     </>
