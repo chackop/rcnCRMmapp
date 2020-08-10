@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import people from './people.json';
 
 const initialState = {
