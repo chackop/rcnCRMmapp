@@ -11,7 +11,7 @@ import {Platform, StyleSheet, Text, View} from 'react-native';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import reducers from '../reducers/PeopleReducer';
-import PeopleList from './PeopleList';
+import Navigation from './Navigation';
 
 const store = createStore(
   reducers,
@@ -22,9 +22,7 @@ export default class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <View style={styles.container}>
-          <PeopleList />
-        </View>
+        <Navigation />
       </Provider>
     );
   }
