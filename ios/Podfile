@@ -8,6 +8,8 @@ target 'rcnCRMmapp' do
 
   use_react_native!(:path => config["reactNativePath"])
 
+  pod 'react-native-material-kit', :path => '../node_modules/react-native-material-kit'
+
   target 'rcnCRMmappTests' do
     inherit! :complete
     # Pods for testing

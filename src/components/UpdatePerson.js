@@ -23,16 +23,16 @@ const styles = StyleSheet.create({
   },
 });
 
-// const AddButton = MKButton.coloredButton().withText('ADD').build();
+// const UpdateButton = MKButton.coloredButton().withText('UPDATE').build();
 
-class AddPerson extends Component {
+class UpdatePerson extends Component {
   static navigationOptions = {
     tabBarIcon: ({tintColor}) => (
       <Icon name={'plus'} size={50} color={tintColor} />
     ),
   };
 
-  onAddPress() {
+  onUpdatePress() {
     const {
       firstName,
       lastName,
@@ -41,9 +41,10 @@ class AddPerson extends Component {
       company,
       project,
       notes,
+      _id,
     } = this.props;
 
-    this.props.createNewContact({
+    this.props.saveContact({
       firstName,
       lastName,
       phone,
@@ -51,16 +52,15 @@ class AddPerson extends Component {
       company,
       project,
       notes,
+      _id,
     });
-
-    this.props.navigation.navigate('People');
   }
 
   render() {
     return (
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.form}>
-          <Text>Add a new contact</Text>
+          <Text>Update contact</Text>
           <MKTextField
             textInputStyle={styles.fieldStyles}
             placeholder={'First name...'}
@@ -125,7 +125,7 @@ class AddPerson extends Component {
             }
           />
           <View style={styles.addButton}>
-            <AddButton onPress={this.onAddPress.bind(this)} />
+            <UpdateButton onPress={this.onUpdatePress.bind(this)} />
           </View>
         </View>
       </ScrollView>
@@ -134,8 +134,17 @@ class AddPerson extends Component {
 }
 
 const mapStateToProps = (state) => {
-  const {firstName, lastName, phone, email, company, project, notes} = state;
-  return {firstName, lastName, phone, email, company, project, notes};
+  const {
+    firstName,
+    lastName,
+    phone,
+    email,
+    company,
+    project,
+    notes,
+    _id,
+  } = state;
+  return {firstName, lastName, phone, email, company, project, notes, _id};
 };
 
-export default connect(mapStateToProps, actions)(AddPerson);
+export default connect(mapStateToProps, actions)(UpdatePerson);
