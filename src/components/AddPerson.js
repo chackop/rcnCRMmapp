@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   },
 });
 
-// const AddButton = MKButton.coloredButton().withText('ADD').build();
+const AddButton = MKButton.coloredButton().withText('ADD').build();
 
 class AddPerson extends Component {
   static navigationOptions = {

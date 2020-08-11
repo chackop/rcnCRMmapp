@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   },
 });
 
-// const UpdateButton = MKButton.coloredButton().withText('UPDATE').build();
+const UpdateButton = MKButton.coloredButton().withText('UPDATE').build();
 
 class UpdatePerson extends Component {
   static navigationOptions = {
